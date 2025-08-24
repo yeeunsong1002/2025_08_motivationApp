@@ -1,5 +1,6 @@
 package com.koreait.exam.controller;
 
+import com.koreait.exam.Container;
 import com.koreait.exam.Motivation;
 import com.koreait.exam.Rq;
 
@@ -10,15 +11,12 @@ public class MotivationController {
     private int lastId = 0;
     private List<Motivation> motivationList = new ArrayList<>();
 
-    public MotivationController(Scanner sc) {
-        this.sc = sc;
-    }
 
     public void add() {
         System.out.print("명언 : ");
-        String body = sc.nextLine().trim();
+        String body = Container.getScanner().nextLine().trim();
         System.out.print("저자 : ");
-        String author = sc.nextLine().trim();
+        String author = Container.getScanner().nextLine().trim();
         ++lastId;
 
         Motivation addMotiv = new Motivation(lastId, body, author);
