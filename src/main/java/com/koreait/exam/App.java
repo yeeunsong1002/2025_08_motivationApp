@@ -76,7 +76,7 @@ public class App {
 
             } else if (cmd.equals("list")) {
                 System.out.println("=".repeat(20));
-                System.out.println("   번호      /       저자       /       명언");
+                System.out.println("   번호      /       명언       /       저자");
 
                 if(motivationList.size() == 0) {
                     System.out.println("등록된 명언이 없습니다.");
@@ -85,14 +85,16 @@ public class App {
 
                     Collections.reverse(motivationList);
                     for (Motivation m : motivationList) {
-                        System.out.println(m.getId() + "     " + m.getBody() + "     " + m.getAuthor());
+                        System.out.println(m.getId() + "     " + m.getBody().substring(0, 5)+"..." + "     " + m.getAuthor());
 
                     }
 
-                /*    for(int i = motivationList.size() - 1; i >= 0 ; i--){
+/*
+                    for(int i = motivationList.size() - 1; i >= 0 ; i--){
                         System.out.println(motivationList.get(i).getId() + "     " + motivationList.get(i).getBody() + "     " + motivationList.get(i).getAuthor() );
                     }
-                }*/
+                }
+*/
 
 
 //                System.out.println(m1.getAuthor());
