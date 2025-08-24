@@ -12,9 +12,6 @@ import java.util.ArrayList;
 public class App {
 
 
-
-
-
     public void run() {
         SystemController systemController = new SystemController();
         MotivationController motivationController = new
@@ -37,9 +34,11 @@ public class App {
             } else if (cmd.equals("list")) {
                 motivationController.list();
             } else if (cmd.startsWith("delete")) {
-           //    motivationController.delete(cmd);
+                //    motivationController.delete(cmd);
                 motivationController.newDelete(cmd);
 
+            } else if (cmd.startsWith("update")) {
+                motivationController.update(cmd);
             } else {
                 System.out.println("사용할 수 없는 명령어입니다.");
 
